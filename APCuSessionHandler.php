@@ -33,7 +33,7 @@ class APCuSessionHandler implements SessionHandlerInterface, SessionIdInterface,
      * @param $id
      * @return false|string
      */
-    public function read($id): false|string {
+    public function read($id) {
         return apcu_fetch($id);
     }
 
@@ -57,8 +57,9 @@ class APCuSessionHandler implements SessionHandlerInterface, SessionIdInterface,
     /**
      * @param $max_lifetime
      * @return int|false
+     * @noinspection PhpReturnDocTypeMismatchInspection
      */
-    public function gc($max_lifetime): int|false {
+    public function gc($max_lifetime) {
         return true;
     }
 
