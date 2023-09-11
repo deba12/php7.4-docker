@@ -45,6 +45,7 @@ RUN rm /etc/php/7.4/fpm/pool.d/www.conf && \
         echo; \
     } | tee --append /etc/php/7.4/fpm.php.ini
 
+RUN mkdir -p /run/php
 COPY APCuSessionHandler.php /etc/php/7.4/fpm
 
 STOPSIGNAL SIGQUIT
